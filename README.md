@@ -59,28 +59,28 @@ Open the URL in browser to visualize model.
  ④ Pandas  
 
 ### 2、下载这个工程到任意目录并解压  
-① 切换到目录 ../VTN/Label_Map,打开label.txt,将其中已有的类名修改为你的类名和对应的id。  
+① 切换到目录 `../VTN/Label_Map`,打开label.txt,将其中已有的类名修改为你的类名和对应的id。  
 
 ### 3、创建保存数据的目录  
-① 切换到目录 ../VTN/Code,然后运行：python make_dir.py，在目录../VTN/Raw_Data 和../VTN/Data 中将会创建子文件夹，文件夹名字为你的类名。  
+① 切换到目录 `../VTN/Code`,然后运行：`python make_dir.py`，在目录`../VTN/`Raw_Data 和`../VTN/Data` 中将会创建子文件夹，文件夹名字为你的类名。  
 
 ### 4、准备数据，生成视频片段（clips）  
-① 根据类别，将你自己收集到的原始视频数据复制到目录 ../VTN/Raw_Data 中对应的文件夹中。  
-② 切换到目录 ../VTN/Code, 然后运行：python prepare_clips.py，每个类生成的视频片段将会保存在../VTN/Data 的子文件夹中，将被用于训练模型。  
+① 根据类别，将你自己收集到的原始视频数据复制到目录 `../VTN/Raw_Data` 中对应的文件夹中。  
+② 切换到目录 `../VTN/Code`, 然后运行：`python prepare_clips.py`，每个类生成的视频片段将会保存在`../VTN/Data` 的子文件夹中，将被用于训练模型。  
 
 ### 5、计算训练集的均值图像  
-① 切换到目录 ../VTN/Code,然后运行：python mean_img.py，生成的均值图像将会保存在../VTN/Data 目录下。  
+① 切换到目录 `../VTN/Code`,然后运行：`python mean_img.py`，生成的均值图像将会保存在`../VTN/Data` 目录下。  
 注：训练时，视频片段中每一帧图像将会被移除均值图像。  
 
 ### 6、训练模型  
-① 切换到目录 ../VTN/Code，然后运行python train.py PB 或者 python train.py CHECKPOINT,参数 "PB" 和 "CHECKPOINT"分别对应Tensorflow保存模型的两种方式。模型保存在 ../VTN/Model中。  
+① 切换到目录 `../VTN/Code`，然后运行`python train.py PB` 或者 `python train.py CHECKPOINT`,参数 "PB" 和 "CHECKPOINT"分别对应Tensorflow保存模型的两种方式。模型保存在 `../VTN/Model`中。  
 
 ### 7、测试模型（使用PB模型）  
-① 根据步骤4，生成测试数据集的视频片段，同样也保存在../VTN/Data的子文件夹中。  
-② 切换到目录 ../VTN/Code，然后运行python test.py N,这里N为小于等于测试集中clip的数量的正整数。  
+① 根据步骤4，生成测试数据集的视频片段，同样也保存在`../VTN/Data`的子文件夹中。  
+② 切换到目录 `../VTN/Code`，然后运行`python test.py N`,这里N为小于等于测试集中clip的数量的正整数。  
 
 ### 8、Tensorflow可视化模型  
-① 切换到目录 ../VTN/，执行：tensorboard --logdir=Model/，然后将显示的网站复制到浏览器中打开，可看到模型结构。  
+① 切换到目录 `../VTN/`，执行：`tensorboard --logdir=Model/`，然后将显示的网站复制到浏览器中打开，可看到模型结构。  
 
 ## 相关版本
 [tensorflow-C3D](https://github.com/xiaogangLi/tensorflow-C3D)
