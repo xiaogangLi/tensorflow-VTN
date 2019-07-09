@@ -25,7 +25,7 @@ According to the class, copy your raw videos to subfolders in ../VTN/Raw_Data. O
 `run python prepare_clips.py`  
 Clips generated will be saved in the subfolders in ../VTN/Data.  
 
-### 5 Compute the mean image from training clips(the original paper without this step)  
+### 5 Compute the mean image from training clips  
 `cd ../VTN/Code`  
 `run python mean_img.py`    
 And then a mean image is saved in directory ../VTN/Data.  
@@ -70,7 +70,7 @@ Open the URL in browser to visualize model.
 
 ### 5、计算训练集的均值图像  
 ① 切换到目录 ../VTN/Code,然后运行：python mean_img.py，生成的均值图像将会保存在../VTN/Data 目录下。  
-注：训练时，视频片段中每一帧图像将会被移除均值图像（原论文中并没有这一步预处理）。  
+注：训练时，视频片段中每一帧图像将会被移除均值图像。  
 
 ### 6、训练模型  
 ① 切换到目录 ../VTN/Code，然后运行python train.py PB 或者 python train.py CHECKPOINT,参数 "PB" 和 "CHECKPOINT"分别对应Tensorflow保存模型的两种方式。模型保存在 ../VTN/Model中。  
