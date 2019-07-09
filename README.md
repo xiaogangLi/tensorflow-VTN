@@ -46,6 +46,9 @@ Where N is not more than the number of clips in test set. Note we do not use bat
 `run tensorboard --logdir=Model/`   
 Open the URL in browser to visualize model.  
  
+## Other Implementations
+[tensorflow-C3D](https://github.com/xiaogangLi/tensorflow-C3D)
+
 
 ## 使用方法  
 
@@ -79,3 +82,5 @@ Open the URL in browser to visualize model.
 ### 8、Tensorflow可视化模型  
 ① 切换到目录 ../VTN/，执行：tensorboard --logdir=Model/，然后将显示的网站复制到浏览器中打开，可看到模型结构。  
 
+## 相关版本
+[tensorflow-C3D](https://github.com/xiaogangLi/tensorflow-C3D)
