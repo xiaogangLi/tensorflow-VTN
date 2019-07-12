@@ -1,5 +1,5 @@
 # Action Recognition
-This is the implementation of Video Transformer Network(VTN) approach for Action Recognition in Tensorflow. It contains complete code for preprocessing,training and test. Besides, this repository is easy-to-use and can be developed on Linux and Windows.  
+This is the implementation of Video Transformer Network (VTN) approach for Action Recognition in Tensorflow. It contains complete code for preprocessing,training and test. Besides, this repository is easy-to-use and can be developed on Linux and Windows.  
 
 [VTN : Kozlov, Alexander , V. Andronov , and Y. Gritsenko . "Lightweight Network Architecture for Real-Time Action Recognition." (2019).](https://arxiv.org/abs/1905.08711)
 
