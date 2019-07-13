@@ -31,6 +31,7 @@ Clips generated will be saved in the subfolders in `../VTN/Data`.
 And then a mean image is saved in directory `../VTN/Data`.  
 
 ### 6 Training model  
+The model parameters, training parameters and eval parameters are all defined by `parameters.py`.  
 `cd ../VTN/Code`  
 `run python train.py PB` or `python train.py CHECKPOINT`  
 The model will be saved in directory `../VTN/Model`, where "PB" and "CHECKPOINT" is two ways used for saving model for Tensorflow.  
