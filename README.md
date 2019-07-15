@@ -37,7 +37,7 @@ The model parameters, training parameters and eval parameters are all defined by
 The model will be saved in directory `../VTN/Model`, where "PB" and "CHECKPOINT" is two ways used for saving model for Tensorflow.  
  
 ### 7 Test model  
-According to Step 4,preparing video clips for test.  
+According to Step 4, preparing video clips for test.  
 `cd ../VTN/Code`  
 `run python test.py N`  
 Where N is not more than the number of clips in test set. Note we do not use batch during test. There is out of memory errors with a large N. In this case, you can modify the `test.py` to use batch.    
