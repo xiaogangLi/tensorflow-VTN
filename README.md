@@ -42,7 +42,7 @@ Test model using clips in `../VTN/Data/Test`.
 `run python test.py N`  
 Where N is not more than the number of clips in test set. Note we do not use batch during test. There is out of memory errors with a large N. In this case, you can modify the `test.py` to use batch.    
 
-### 8 Visualize using Tensorboard  
+### 8 Visualize model using Tensorboard  
 `cd ../VTN`  
 `run tensorboard --logdir=Model/`   
 Open the URL in browser to visualize model.  
