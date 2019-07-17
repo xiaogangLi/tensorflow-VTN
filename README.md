@@ -74,6 +74,7 @@ Open the URL in browser to visualize model.
 注：训练时，视频片段中每一帧图像将会被移除均值图像（原论文中并没有这一步预处理）。  
 
 ### 6、训练模型  
+在 `parameters.py` 中，你可以修改模型参数、训练参数、评估参数，以及生成训练数据的一些参数。  
 ① 切换到目录 `../VTN/Code`，然后运行`python train.py PB` 或者 `python train.py CHECKPOINT`,参数 "PB" 和 "CHECKPOINT"分别对应Tensorflow保存模型的两种方式。模型保存在 `../VTN/Model`中。  
 
 ### 7、测试模型（使用PB模型）  
@@ -82,7 +83,7 @@ Open the URL in browser to visualize model.
 注：由于在测试集上测试时，并没有把测试集划分成多个batch来测试，如果一次性把测试集读入内存，内存可能不够。此时需要进一步修改`test.py`来实现批量测试。  
 
 ### 8、Tensorflow可视化模型  
-① 切换到目录 `../VTN/`，执行：`tensorboard --logdir=Model/`，然后将显示的网站复制到浏览器中打开，可查看模型结构。  
+① 切换到目录 `../VTN/`，执行：`tensorboard --logdir=Model/`，然后将显示的链接复制到浏览器中打开，可查看模型结构。  
 
 ## 相关版本
 [tensorflow-C3D](https://github.com/xiaogangLi/tensorflow-C3D)
