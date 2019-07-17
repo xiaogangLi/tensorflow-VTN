@@ -25,7 +25,7 @@ According to the class, copy your raw videos to subfolders in `../VTN/Raw_Data`.
 `run python prepare_clips.py`  
 Clips generated will be saved in the subfolders in   `../VTN/Data/Train`,  `../VTN/Data/Test`, `../VTN/Data/Val`. These clips will be used for training, test and validation.  
 
-### 5 Compute the mean image from training clips  
+### 5 Compute the mean image from training clips(optional)  
 `cd ../VTN/Code`  
 `run python mean_img.py`    
 And then a mean image is saved in directory `../VTN/Data/Train`.  
