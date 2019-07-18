@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 29 11:05:53 2019
 
-@author: LiXiaoGang
-"""
 
 import os
 import random
@@ -23,7 +19,7 @@ for j in range(len(labels.Class_name)):
     video_names = os.listdir(src_video_path)
     random.shuffle(video_names)
     
-    fourcc = cv.VideoWriter_fourcc(*'XVID')  # 保存视频的编码
+    fourcc = cv.VideoWriter_fourcc(*'XVID')
     
     num_train = int(len(video_names)*(1-2*parameters.rate))
     num_val = int(len(video_names)*parameters.rate)
@@ -45,11 +41,10 @@ for j in range(len(labels.Class_name)):
         n = n + 1
         
         if cap.isOpened():
-            
-            num_frames = int(cap.get(7))    # Number of frames in the video file.
+            num_frames = int(cap.get(7))
             if num_frames < parameters.IN_DEPTH:continue
-            frame_width = int(cap.get(3))    # Width of the frames in the video stream.
-            frame_height = int(cap.get(4))   # Height of the frames in the video stream.
+            frame_width = int(cap.get(3))
+            frame_height = int(cap.get(4))
                         
             frame_list = []
             for j in range(num_frames):
@@ -67,7 +62,6 @@ for j in range(len(labels.Class_name)):
                 else:
                     clips = frame_list[j*parameters.STRIDE:j*parameters.STRIDE+parameters.IN_DEPTH]
     
-                # write clips
                 i += 1
                 out = cv.VideoWriter(os.path.join(dst_clips_path,class_name+'_'+str(i)+'.avi'),fourcc, parameters.IN_DEPTH, (frame_width,frame_height))
                 for k in range(parameters.IN_DEPTH):
