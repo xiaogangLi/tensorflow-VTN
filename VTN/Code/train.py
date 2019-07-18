@@ -27,7 +27,6 @@ def net_placeholder(batch_size=None):
                                               parameters.IN_CHANNEL],name='Input')
     clip_Y = tf.placeholder(tf.float32,shape=[batch_size,
                                               parameters.NUM_CLASSESS],name='Label')
-#    isTraining = tf.placeholder_with_default(False,shape=None,name='Batch_norm')
     isTraining = tf.placeholder(tf.bool,name='Batch_norm')
     return clip_X,clip_Y,isTraining
     
