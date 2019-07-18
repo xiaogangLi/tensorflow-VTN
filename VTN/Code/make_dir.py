@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Jul  8 13:52:31 2019
-
-@author: LiXiaoGang
-"""
 
 
 import os
