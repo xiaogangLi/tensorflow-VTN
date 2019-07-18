@@ -1,13 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Jul 10 14:19:33 2019
-
-@author: LiXiaoGang
-
-https://www.cnblogs.com/darkknightzh/p/9410574.html
-http://fengjian0106.github.io/
-
-"""
 
 
 import parameters
