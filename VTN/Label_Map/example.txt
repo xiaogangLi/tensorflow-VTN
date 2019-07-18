@@ -1,0 +1,6 @@
+Class_id,Class_name
+
+1,Hit
+2,Run
+3,Smoke
+4,Dance
