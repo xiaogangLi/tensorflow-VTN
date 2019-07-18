@@ -1,15 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Jul 10 10:02:36 2019
-
-@author: LiXiaoGang
-
-# tf.contrib.layers.variance_scaling_initializer(最适用于relu)
-# tf.contrib.layers.xavier_initializer(等价于tf.glorot_uniform_initializer,tf.glorot_normal_initializer最适用于sigmoid,tanh) 
-# tf.truncated_normal_initializer(stddev=0.01)
-https://blog.csdn.net/qq_27825451/article/details/88707423
-
-"""
 
 
 import tensorflow as tf
