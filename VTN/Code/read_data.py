@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 29 15:46:30 2019
 
-@author: LiXiaoGang
-"""
 
 import os 
 import random
@@ -14,7 +10,6 @@ import encode_label
 
 
 def read_dataset(path,labels,status,seed=0,balance=True):
-    
     all_label_list = []
     Class_name = labels.Class_name
     num_classess = len(labels.Class_name)
@@ -48,15 +43,13 @@ def read_dataset(path,labels,status,seed=0,balance=True):
     if  balance == False:
         for i in range(len(all_label_list)):
             shuffle_all_label_list = shuffle_all_label_list + all_label_list[i]
-        
-    # shuffle list 
+         
     random.seed(seed)
     random.shuffle(shuffle_all_label_list)
     return shuffle_all_label_list
 
 
 def read_minibatch(i,batch_size,all_clips_name,mean_image,status):
-
     start = (i*batch_size) % len(all_clips_name)
     end = min(start+batch_size,len(all_clips_name))
     
@@ -88,7 +81,7 @@ def read_minibatch(i,batch_size,all_clips_name,mean_image,status):
             ret,frame = cap.read()
             frame = cv.resize(frame,(parameters.IN_HEIGHT,parameters.IN_WIDTH)).astype(np.float32)
             if parameters.remove_mean_image:
-                frame = frame - mean_image    # remove mean image
+                frame = frame - mean_image
             clip_X[j,:,:,:] = frame
                   
         if status == 'Test':
