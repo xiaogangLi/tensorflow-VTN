@@ -34,7 +34,7 @@ def vtn(clip_X,mode):
         clip_logits = tf.reduce_mean(output,axis=1,name='clip_logits')
         clip_logits = tf.expand_dims(clip_logits,0,name='expand_dims')
 
-    # Classifer
+    # Classifier
     with tf.variable_scope('classifier',reuse=None):
         logits = tf.layers.dense(clip_logits,parameters.NUM_CLASSESS,activation=None,use_bias=True,name='logits')
         softmax_output = tf.nn.softmax(logits,name='softmax_output')
