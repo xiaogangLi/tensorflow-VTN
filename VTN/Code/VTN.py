@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Jul 10 14:28:00 2019
 
-@author: LiXiaoGang
-"""
 
 import sys
 import encoder
@@ -12,9 +8,8 @@ import parameters
 import tensorflow as tf
 
 
-def vtn(clip_X,mode):
-    
-    # Encode
+def vtn(clip_X,mode):    
+    # Encoder
     with tf.variable_scope('encoder',reuse=None):
         if parameters.encoder == 'mobilenetv2':
             output = encoder.mobilenetv2(clip_X,mode)
@@ -25,7 +20,7 @@ def vtn(clip_X,mode):
             print('\nThe %s encoder does not exists!\n' % (parameters.encoder))
             sys.exit(0)
     
-    # Decode
+    # Decoder
     with tf.variable_scope('decoder',reuse=None):
         for i in range(parameters.num_stacks):
             with tf.variable_scope('decoder'+str(i),reuse=None):
