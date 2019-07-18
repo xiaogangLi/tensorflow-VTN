@@ -1,28 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Apr 28 15:46:14 2019
 
-@author: LiXiaoGang
-https://tensorflow.google.cn/
-https://github.com/tensorflow/serving
-https://blog.csdn.net/thriving_fcl/article/details/75213361
-https://blog.csdn.net/loveliuzz/article/details/81128024
-https://www.cnblogs.com/mbcbyq-2137/p/10044837.html
-https://github.com/tensorflow/tensorflow/tree/master/tensorflow/python/saved_model
-
-https://cv-tricks.com/tensorflow-tutorial/save-restore-tensorflow-models-quick-complete-tutorial/
-
-https://www.jianshu.com/p/e5e36ffde809
-https://www.jianshu.com/p/9221fbf52c55
-
-batch norm(bug):https://blog.csdn.net/zaf0516/article/details/89958962
-请问在将pb文件转为tflite文件时如果模型里有batch normal应该如何操作？
-https://www.zhihu.com/question/318251292?sort=created
-https://blog.csdn.net/computerme/article/details/80836060
-https://stackoverflow.com/questions/45800871/tensorflow-save-restore-batch-norm#
-https://github.com/tensorflow/serving/issues/986
-          
-"""
 
 import os
 import sys
@@ -37,9 +14,9 @@ import save_inference_model
 
 
 def load_clip_name(path,status,balance):
-    labels = pd.read_csv(os.path.join(path,'Label_Map','label.txt'))    # load label.txt
-    all_clips_name = rd.read_dataset(path,labels,status,seed=66,balance=balance)    # train set
-    mean_image = np.load(os.path.join(path,'Data','Train','mean_image.npy'))    # read mean image
+    labels = pd.read_csv(os.path.join(path,'Label_Map','label.txt'))
+    all_clips_name = rd.read_dataset(path,labels,status,seed=66,balance=balance)
+    mean_image = np.load(os.path.join(path,'Data','Train','mean_image.npy'))
     return all_clips_name,mean_image
         
  
@@ -68,7 +45,7 @@ def val(sess,clip_X,clip_Y,isTraining,Softmax_output,test_batch_size,path,status
         if (j*test_batch_size)>len(all_clips_name):
             break
         Y,X = rd.read_minibatch(j,test_batch_size,all_clips_name,mean_image,status)
-        feed_dict = {clip_X:X,clip_Y:Y,isTraining:False}    # Equivalent to {clip_X:X,clip_Y:Y} 
+        feed_dict = {clip_X:X,clip_Y:Y,isTraining:False}
         softmax = sess.run(Softmax_output,feed_dict=feed_dict)
 
         # Compute clip-level accuracy
@@ -89,10 +66,9 @@ def training_net():
     with tf.control_dependencies(update_ops):        
         train_step = tf.train.AdamOptimizer(parameters.LEARNING_RATE).minimize(loss)
      
-    Saver = tf.train.Saver(var_list=tf.global_variables())    # Saver
-    with tf.Session() as sess:    # Launch the graph in a session.
+    Saver = tf.train.Saver(var_list=tf.global_variables())
+    with tf.Session() as sess:
         
-        # Create a summary writer, add the 'graph' to the event file.
         writer = tf.summary.FileWriter(os.path.join(parameters.path,'Model'), sess.graph)     
         init_var_op = tf.global_variables_initializer()
         sess.run(init_var_op)
@@ -102,7 +78,6 @@ def training_net():
             feed_dict = {clip_X:X,clip_Y:Y,isTraining:True}
             _,loss_ = sess.run([train_step,loss],feed_dict=feed_dict)
             
-            # ------------------------------- Save model --------------------------
             if i % 100 == 0: 
                 # accuracy on val clips
                 val_acc = val(sess,clip_X,clip_Y,isTraining,Softmax_output,1,parameters.path,'Val',False)
