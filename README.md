@@ -40,7 +40,7 @@ The model will be saved in directory `../VTN/Model`, where "PB" and "CHECKPOINT"
 Test model using clips in `../VTN/Data/Test`.  
 `cd ../VTN/Code`  
 `run python test.py N`  
-Where N is not more than the number of clips in test set. Note we do not use batch during test. There may be out of memory errors with a large N. In this case, you can modify the `test.py` to use batch.    
+Where N is not more than the number of clips in test set. Note that we do not use batch during test. There may be out of memory errors with a large N. In this case, you can modify the `test.py` to use batch.    
 
 ### 8 Visualize model using Tensorboard  
 `cd ../VTN`  
