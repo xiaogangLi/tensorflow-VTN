@@ -66,7 +66,7 @@ Open the URL in browser to visualize model.
 ① 切换到目录 `../VTN/Code`,然后运行：`python make_dir.py`，在目录`../VTN/Raw_Data` 、`../VTN/Data/Train`、 `../VTN/Data/Test`、`../VTN/Data/Val` 中将会创建子文件夹，文件夹名字为你的类名。  
 
 ### 4、准备数据，生成视频片段（clips）  
-① 根据类别，将你自己收集到的原始视频数据（AVI格式）复制到目录 `../VTN/Raw_Data` 中对应的文件夹中。  
+① 根据类别名称，将你自己收集到的原始视频数据（AVI格式）复制到目录 `../VTN/Raw_Data` 中对应的文件夹中。  
 ② 切换到目录 `../VTN/Code`, 然后运行：`python prepare_clips.py`，每个类生成的视频片段将会保存在 `../VTN/Data/Train`,  `../VTN/Data/Test`, `../VTN/Data/Val` 的子文件夹中，将被用于模型训练、评估和测试。  
 
 ### 5、计算训练集的均值图像（可选的）  
