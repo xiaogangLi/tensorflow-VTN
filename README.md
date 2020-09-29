@@ -5,7 +5,7 @@ This is the implementation of Video Transformer Network (VTN) approach for Actio
 
 ## Getting Started
 ### 1 Prerequisites  
-* Python3.6  
+* Python 3.x  
 * Tensorflow 1.x    
 * Opencv-python  
 * Pandas  
